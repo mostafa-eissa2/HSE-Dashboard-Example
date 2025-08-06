@@ -150,7 +150,7 @@ function updateDashboard(selectedMonth) {
 
     if (selectedMonth === 'Jul') {
         totalHoursCard.style("display", "block");
-        animateValue("kpi-total-hours", 3285917);
+        animateValue("kpi-total-hours", 2500000);
     } else {
         totalHoursCard.style("display", "none");
         displayMonthlyKPIs(selectedMonth);
