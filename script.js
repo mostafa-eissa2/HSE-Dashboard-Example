@@ -6,11 +6,11 @@
 const permits_csv = `
 Project,Jan,Feb,Mar,Apr,May,Jun,Jul
 Project1,50,30,12,14,35,45,15
-Project,10,56,50,40,30,20,10
-Project,62,46,75,40,56,75,75
-Project,86,62,19,100,105,45,123
-Project,85,95,16,65,20,4,5
-Project,20,56,12,25,26,27,28
+Project2,10,56,50,40,30,20,10
+Project3,62,46,75,40,56,75,75
+Project4,86,62,19,100,105,45,123
+Project5,85,95,16,65,20,4,5
+Project6,20,56,12,25,26,27,28
 `;
 const parties_csv = `
 Column1,Jan,Feb,Mar,Apr,May,Jun,Jul
