@@ -343,7 +343,7 @@ function drawCumulativeRadialChart(value, total) {
     const svg = container.append("svg").attr("viewBox", `0 0 ${width} ${height}`).append("g").attr("transform", `translate(${width / 2},${height / 2})`);
     const arc = d3.arc().innerRadius(radius - thickness).outerRadius(radius).startAngle(0).cornerRadius(10);
     svg.append("path").datum({ endAngle: 2 * Math.PI }).style("fill", "#eef0f3").attr("d", arc);
-    const foreground = svg.append("path").datum({ endAngle: 0 }).style("fill", "#C8102E").attr("d", arc);
+    const foreground = svg.append("path").datum({ endAngle: 0 }).style("fill", "#2980B9").attr("d", arc);
     foreground.transition().duration(1000).attrTween("d", function(d) {
         const interpolate = d3.interpolate(d.endAngle, 2 * Math.PI * percentage);
         return function(t) { d.endAngle = interpolate(t); return arc(d); };
@@ -366,8 +366,8 @@ function drawObservationsTrendChart(data) {
     const margin = { top: 20, right: 30, bottom: 40, left: 50 }, width = container.node().getBoundingClientRect().width - margin.left - margin.right, height = 300 - margin.top - margin.bottom;
     const svg = container.append("svg").attr("viewBox", `0 0 ${width + margin.left + margin.right} ${height + margin.top + margin.bottom}`).append("g").attr("transform", `translate(${margin.left},${margin.top})`);
     const gradient = svg.append("defs").append("linearGradient").attr("id", "area-gradient").attr("x1", "0%").attr("y1", "0%").attr("x2", "0%").attr("y2", "100%");
-    gradient.append("stop").attr("offset", "0%").attr("stop-color", "#C8102E").attr("stop-opacity", 0.4);
-    gradient.append("stop").attr("offset", "100%").attr("stop-color", "#C8102E").attr("stop-opacity", 0);
+    gradient.append("stop").attr("offset", "0%").attr("stop-color", "#2980B9").attr("stop-opacity", 0.4);
+    gradient.append("stop").attr("offset", "100%").attr("stop-color", "#2980B9").attr("stop-opacity", 0);
     const x = d3.scalePoint().range([0, width]).domain(data.map(d => d.Month)).padding(0.5);
     const y = d3.scaleLinear().domain([0, 110]).range([height, 0]);
     svg.append("g").attr("class", "axis-x").attr("transform", `translate(0,${height})`).call(d3.axisBottom(x));
