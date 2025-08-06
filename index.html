@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TURNKEY - HSE Dashboard</title>
+    <link rel="icon" type="image/png" href="TURNKEY3.png">
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+
+<body>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <img src="TURNKEY.png" alt="TURNKEY Logo" class="logo">
+            </div>
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active">Dashboard</a>
+
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <header class="main-header">
+                <img src="TURNKEY.png" alt="TURNKEY Logo" class="logo-mobile">
+
+                <h1>HSE Analytics Dashboard</h1>
+                <div class="controls-container">
+
+                    <div class="filter-container">
+                        <label for="month-filter">Select Month:</label>
+                        <select id="month-filter"></select>
+                    </div>
+                </div>
+            </header>
+
+            <section class="card" id="total-hours-card" style="display: none;">
+                <div class="total-kpi">
+                    <div class="kpi-label">SAFE WORK-HOURS WITHOUT LTI</div>
+                    <div class="kpi-value" id="kpi-total-hours">0</div>
+                </div>
+            </section>
+            <section class="card kpi-section">
+                <div id="monthly-kpis" class="kpi-grid">
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>1. Permits per Project</h2>
+                <div id="permits-chart-container"></div>
+            </section>
+            <section class="card">
+                <h2>2. Permits by Requesting Party</h2>
+                <div id="parties-chart-container"></div>
+            </section>
+            <div class="row-3-container">
+                <section class="card">
+                    <h2>3. Delays Analysis</h2>
+                    <div id="delays-chart-container"></div>
+                    <div id="delays-legend-container" class="legend-container"></div>
+                </section>
+                <section class="card">
+                    <h2>4. Shifts Analysis</h2>
+                    <div id="shifts-chart-container"></div>
+                    <div id="shifts-legend-container" class="legend-container"></div>
+                </section>
+                <section class="card" id="cumulative-card">
+                    <h2>5. Cumulative Permits (PTW)</h2>
+                    <div id="cumulative-permits-chart-container"></div>
+                </section>
+            </div>
+            <section class="card" id="observations-card">
+                <h2>6. Trend of Safety Observations (YTD)</h2>
+                <div id="observations-chart-container"></div>
+            </section>
+            <footer class="site-footer">
+                <p>Developed and Designed By HSE Department</p>
+                <p>By: HSE Coordinator / Mostafa Eissa </p>
+            </footer>
+        </main>
+    </div>
+    <div id="modal-overlay" class="modal-overlay">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-title">Chart Data</h3>
+                <button class="close-button" aria-label="Close modal">&times;</button>
+            </div>
+            <div id="modal-table-container">
+            </div>
+        </div>
+    </div>
+</body>
+<script src="script.js"></script>
+
+</html>
