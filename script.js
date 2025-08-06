@@ -327,7 +327,7 @@ function drawPieLegend(selector, data, color) {
     data.forEach(d => {
         if (d.value > 0) {
             const item = container.append("div").attr("class", "legend-item");
-            item.append("div").attr("class", "legend-color").style("background-color", color(#2980B9));
+            item.append("div").attr("class", "legend-color").style("background-color", color(d.group));
             item.append("span").text(`${d.group}: ${d.value}`);
         }
     });
