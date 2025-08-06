@@ -44,10 +44,16 @@ body {
 .logo {
     max-width: 80%;
     height: auto;
+    background: var(--brand-red);
+    color: var(--white);
+    padding: 15px;
 }
 
 .logo-mobile {
     display: none;
+    background: var(--brand-red);
+    color: var(--white);
+    padding: 15px;
 }
 
 .sidebar-nav {
