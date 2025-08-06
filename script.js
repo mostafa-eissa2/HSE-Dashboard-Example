@@ -300,7 +300,7 @@ function drawExplodedPieChart(data, title) {
     container.on("click", () => showModal(title, data));
     const width = container.node().getBoundingClientRect().width, height = 300, radius = Math.min(width, height) / 2 * 0.7;
     const svg = container.append("svg").attr("viewBox", `0 0 ${width} ${height}`).append("g").attr("transform", `translate(${width / 2},${height / 2})`);
-    const color = d3.scaleOrdinal(["#C8102E", "#2C2A29"]);
+    const color = d3.scaleOrdinal(["#2980B9", "#2C2A29"]);
     const pie = d3.pie().value(d => d.value).sort(null);
     const arc = d3.arc().innerRadius(radius * 0.5).outerRadius(radius);
     svg.selectAll(".arc-path").data(pie(data)).enter().append("path").attr("class", "arc-path").attr("d", arc).attr("fill", d => color(d.data.group)).style("stroke", "var(--white)").style("stroke-width", "5px").append("title").text(d => `${d.data.group}: ${d.data.value}`);
@@ -314,7 +314,7 @@ function drawInteractivePieChart(data, title) {
     container.on("click", () => showModal(title, data));
     const width = container.node().getBoundingClientRect().width, height = 300, radius = Math.min(width, height) / 2 * 0.7;
     const svg = container.append("svg").attr("viewBox", `0 0 ${width} ${height}`).append("g").attr("transform", `translate(${width / 2},${height / 2})`);
-    const color = d3.scaleOrdinal(["#C8102E", "#2C2A29"]);
+    const color = d3.scaleOrdinal(["#2980B9", "#2C2A29"]);
     const pie = d3.pie().value(d => d.value).sort(null);
     const arc = d3.arc().innerRadius(0).outerRadius(radius);
     const arcHover = d3.arc().innerRadius(0).outerRadius(radius * 1.1);
@@ -327,7 +327,7 @@ function drawPieLegend(selector, data, color) {
     data.forEach(d => {
         if (d.value > 0) {
             const item = container.append("div").attr("class", "legend-item");
-            item.append("div").attr("class", "legend-color").style("background-color", color(d.group));
+            item.append("div").attr("class", "legend-color").style("background-color", color(#2980B9));
             item.append("span").text(`${d.group}: ${d.value}`);
         }
     });
